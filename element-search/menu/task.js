@@ -1,17 +1,17 @@
 const link = document.querySelector('.menu_main');
 
 link.addEventListener('click', e => {
-  const o = e.target
-  if (!o.classList.contains('menu__link')) return
-  const op = o.closest('.menu__item')
-  if (!op.querySelector('.menu_sub')) return
+  const linkTarget = e.target
+  if (!linkTarget.classList.contains('menu__link')) return
+  const menuItem = linkTarget.closest('.menu__item')
+  if (!menuItem.querySelector('.menu_sub')) return
   e.preventDefault();
-  let oa = op.querySelector('.menu_active')
-  if (oa) {
-    oa.classList.remove('menu_active');
+  let menuActive = menuItem.querySelector('.menu_active')
+  if (menuActive) {
+    menuActive.classList.remove('menu_active');
     return
   } 
-  oa = link.querySelector('.menu_active')
-  if (oa) oa.classList.remove('menu_active');
-  op.querySelector('.menu_sub').classList.add('menu_active')
+  menuActive = link.querySelector('.menu_active')
+  if (menuActive) menuActive.classList.remove('menu_active');
+  menuItem.querySelector('.menu_sub').classList.add('menu_active')
 })
