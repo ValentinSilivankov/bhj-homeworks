@@ -22,7 +22,8 @@ function updateSlider() {
     sliderItems.forEach((slide, index) => {
       if (index === slideIndex) {
         slide.classList.add('slider__item_active');
-      } else {
+      } 
+      else {
         slide.classList.remove('slider__item_active');
       }
     });
