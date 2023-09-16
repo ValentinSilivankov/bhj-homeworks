@@ -8,13 +8,11 @@ let slideIndex = 0;
 
 nextButton.onclick = function(){
     slideIndex = (slideIndex + 1) % slideCount;
-
     updateSlider();
 };
 
 prevButton.onclick = function(){
     slideIndex = (slideIndex - 1 + slideCount) % slideCount;
-
     updateSlider();
 };
 
