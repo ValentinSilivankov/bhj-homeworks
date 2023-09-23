@@ -25,6 +25,12 @@ class Game {
       При неправильном вводе символа - this.fail();
       DOM-элемент текущего символа находится в свойстве this.currentSymbol.
      */
+
+    document.addEventListener('keyup', (e) => {
+        if (e.key === 'Control' || e.key === 'Alt' || e.key === 'Shift') return;
+        e.key === this.currentSymbol.innerHTML ? this.success() : this.fail();
+        });
+
   }
 
   success() {
@@ -45,7 +51,7 @@ class Game {
   }
 
   fail() {
-    if (++this.lossElement.textContent === 5) {
+    if (++this.lossElement.textContent === 3) {
       alert('Вы проиграли!');
       this.reset();
     }
