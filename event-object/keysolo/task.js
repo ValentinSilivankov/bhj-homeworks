@@ -26,11 +26,19 @@ class Game {
       DOM-элемент текущего символа находится в свойстве this.currentSymbol.
      */
 
-    document.addEventListener('keyup', (e) => {
-        if (e.key === 'Control' || e.key === 'Alt' || e.key === 'Shift') return;
-        e.key === this.currentSymbol.innerHTML ? this.success() : this.fail();
-        });
-
+    let onKey = (e) => {
+      const current = this.currentSymbol
+      if (e.key === 'Shift' || e.key === 'Control' || e.key === 'Alt'){
+        return
+      }
+      if (current.textContent == e.key) {
+        this.success()
+      }
+      else {
+        this.fail()
+      }
+    }
+    document.addEventListener('keydown', onKey)
   }
 
   success() {
