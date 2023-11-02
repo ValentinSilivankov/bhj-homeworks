@@ -21,6 +21,7 @@ REQUEST.addEventListener("readystatechange", () => {
     });
   }
 });
+
 REQUEST.open(
   "GET",
   "https://students.netoservices.ru/nestjs-backend/slow-get-courses"
