@@ -15,7 +15,7 @@ formElement.addEventListener("submit", (event) => {
   if (finishMessage) {
     finishMessage.remove();
   }
-  
+
   progress.classList.remove("hidden");
   progress.value = 0;
 
