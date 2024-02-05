@@ -38,10 +38,10 @@ function addTask(text) {
   tasksContainer.insertAdjacentHTML('beforeend', taskHTML)
 }
 
-
 window.addEventListener('load', loadTasks)
 
 const form = document.getElementById('tasks__form')
+
 
 form.addEventListener("submit", (event) => {
   event.preventDefault()
